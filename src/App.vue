@@ -2,19 +2,23 @@
   <div id="wrapper">
     <nav class="navbar navbar-default">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#/luanlai">
           <i class="glyphicon glyphicon-time"></i>
           计划板
         </a>
+        <!-- 导航栏 -->
         <TopNav/>
       </div>
     </nav>
     <div class="container">
-      <div class="col-sm-3">
-        <sidebar></sidebar>
-      </div>
-      <div class="col-sm-9">
-        <router-view></router-view>
+      <div class="row">
+        <div class="col-sm-3">
+          <!-- 侧边栏 -->
+          <sidebar></sidebar>
+        </div>
+        <div class="col-sm-9">
+          <router-view></router-view>
+        </div>
       </div>
     </div>
   </div>
@@ -23,6 +27,8 @@
 <script>
 import TopNav from './components/TopNav'
 import Sidebar from './components/Sidebar'
+import Vue from 'vue'
+
 
 export default {
   name: 'App',
