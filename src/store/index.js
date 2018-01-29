@@ -24,6 +24,14 @@ const state = {
         date: '2017-12-27',
         totalTime: 3,
         comment: '今晚坐车回家'
+      },
+      {
+        name: 'haha mummy',
+        avatar: '../../static/images/hahamummy.jpg',
+        city: { id: 999, value: '山卡拉' },
+        date: '2017-12-27',
+        totalTime: 2,
+        comment: '煮饭饭比哈哈食'
       }
   ]
 };

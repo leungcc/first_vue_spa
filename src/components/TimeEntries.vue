@@ -7,16 +7,16 @@
       v-if="$route.path !== '/time-entries/log-time'"
       to="/time-entries/log-time"
       class="btn btn-primary"
-    >创建</router-link>
+    >{{ $t("button.create") }}</router-link>
 
     <div v-if="$route.path === '/time-entries/log-time'">
-      <h3>创建</h3>
+      <h3>{{ $t("button.create") }}</h3>
     </div>
 
     <hr>
 
     <div class="filter-panel">
-      <xcselect :list="selectCitys" btnValue="查询"></xcselect>  
+      <xcselect :list="selectCitys" :btnValue="$t('button.search')"></xcselect>  
     </div>
 
     <hr>

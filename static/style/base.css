@@ -11,3 +11,20 @@ ul li {
   font-size: 12px;
   text-align: left
 }
+
+.language-nav {
+  float: left;
+  font-size: 12px;
+  color: #999;
+  position: relative;
+  left: -10px;
+}
+.language-nav li {
+  cursor: pointer;
+}
+.language-nav li:hover {
+  color: #007bff;
+}
+.fl {
+  float: left;
+}

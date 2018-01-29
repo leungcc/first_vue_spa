@@ -4,7 +4,7 @@
       <div class="container">
         <a class="navbar-brand" href="#/luanlai">
           <i class="glyphicon glyphicon-time"></i>
-          计划板
+          {{ $t("common.planPanel") }}
         </a>
         <!-- 导航栏 -->
         <TopNav/>

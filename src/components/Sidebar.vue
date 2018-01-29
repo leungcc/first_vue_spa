@@ -4,7 +4,7 @@
 <template>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1 class="text-center"><span style="width:16px;height:16px;display:inline-block;" class="glyphicon glyphicon-time" aria-hidden="true"> </span>已有时长</h1>
+      <h1 class="text-center"><span style="width:16px;height:16px;display:inline-block;" class="glyphicon glyphicon-time" aria-hidden="true"> </span>{{ $t("message.hasTime") }}</h1>
     </div>
     <div class="panel-body">
       <h1 class="text-center">{{ time }} 小时</h1>
