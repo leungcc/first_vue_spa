@@ -8,7 +8,7 @@
       to="/time-entries/log-time"
       class="btn btn-primary"
     >{{ $t("button.create") }}</router-link>
-
+    <button class="btn btn-default" @click="showModal()">xxxx</button>
     <div v-if="$route.path === '/time-entries/log-time'">
       <h3>{{ $t("button.create") }}</h3>
     </div>
@@ -63,12 +63,18 @@
       </div>
     </div>
 
+
+    <modal v-show="isShowModal" @close="closeModal()" />
   </div>
+
+  
 </template>
 
 <script>
   import xcselect from './views/select'
   import cityList from './../../static/staticData/city'
+  import modal from './views/modal'
+
   export default {
     name: 'TimeEntries',
     mounted() {
@@ -89,7 +95,8 @@
     data() {
       return {
         selectCitys: cityList,
-        planList: this.$store.state.list
+        planList: this.$store.state.list,
+        isShowModal: false
       }
     },
     computed: {
@@ -104,10 +111,17 @@
         this.$store.dispatch('decTotalTime', this.plans[idx].totalTime)
         // 删除该计划
         this.$store.dispatch('deletePlan', idx)
+      },
+      showModal() {
+        this.isShowModal = true;
+      },
+      closeModal() {
+        this.isShowModal = false;
       }
     },
     components: {
-      xcselect
+      xcselect,
+      modal
     }
   }
   
