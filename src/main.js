@@ -5,10 +5,20 @@ import App from './App'
 import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.css'
+//import 'element-ui/lib/theme-chalk/index.css'
+import '../theme/index.css'
 import i18n from './i18n'
+import './element-ui'
+/* -- 全局组件 --*/
+import modal from './components/views/modal'
+import xcselect from './components/views/select'
+/* -- --*/
 
 Vue.config.productionTip = false
 
+// 注册全局组件
+Vue.component('modal', modal);
+Vue.component('xcselect', xcselect);
 
 /* eslint-disable no-new */
 new Vue({
@@ -30,3 +40,5 @@ new Vue({
     }
   }
 })
+
+console.log(process.env)

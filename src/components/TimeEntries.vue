@@ -8,7 +8,10 @@
       to="/time-entries/log-time"
       class="btn btn-primary"
     >{{ $t("button.create") }}</router-link>
-    <button class="btn btn-default" @click="showModal()">xxxx</button>
+    <button class="btn btn-default" @click="showModal()">Modal</button>
+    <el-button type="primary" @click.native="tx1_login()">登录tx1</el-button>
+    <el-button type="warning" @click.native="tx1_test()">tx1-api</el-button>
+    <el-button type="danger" @click.native="tx1_logout()">登出</el-button>
     <div v-if="$route.path === '/time-entries/log-time'">
       <h3>{{ $t("button.create") }}</h3>
     </div>
@@ -71,9 +74,10 @@
 </template>
 
 <script>
-  import xcselect from './views/select'
+  
   import cityList from './../../static/staticData/city'
-  import modal from './views/modal'
+  import { tx1_test, tx1_login } from './../api'
+  import md5 from 'js-md5';
 
   export default {
     name: 'TimeEntries',
@@ -117,11 +121,36 @@
       },
       closeModal() {
         this.isShowModal = false;
+      },
+      // 测试 tx1 的 api
+      tx1_test() {
+        tx1_test({
+          command: 'GetSystemStatus',
+          content: {},
+          version: '1.0'
+        })
+          .then((res)=>{
+            console.log(res);
+          })
+      },
+      // 测试 tx1 的 登录
+      tx1_login() {
+        tx1_login({
+          "version": "1.0",
+			    "command": "Login",
+			    "content":{
+            "username": "admin",
+            "passwd": md5("admin"+"&"+"snemface")
+          }
+        })
+          .then((res)=>{
+            console.warn(res);
+          })
+      },
+      // 测试 tx1 的 登出
+      tx1_logout() {
+        
       }
-    },
-    components: {
-      xcselect,
-      modal
     }
   }
   

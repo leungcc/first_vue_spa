@@ -53,6 +53,9 @@
         comment: ''
       }
     },
+    destroyed() {
+      console.error("logtime.vue destroyed..");
+    },
     methods: {
       save() {
         const plan = {

@@ -1,36 +1,38 @@
 <template>
-  <div class="modal-backdrop">
-    <div class="modal-xc">
-      <header class="modal-header">
-        <slot name="header">
-          This is the default tile!
-          <button 
-            type="button"
-            class="btn-close"
-            @click="close"
-          >
-          x
-          </button>
-        </slot>
-      </header>
-      <section class="modal-body">
-        <slot name="body">
-          I'm the default body!
-        </slot>
-      </section>
-      <footer class="modal-footer">
-        <slot name="footer">
-          <button
-            type="button"
-            class="btn-green"
-            @click="close"
-          >
-            Close me!
-          </button>
-        </slot>
-      </footer>
-    </div>    
-  </div>
+  <transition name="modal-fade">
+    <div class="modal-backdrop">
+      <div class="modal-xc">
+        <header class="modal-header">
+          <slot name="header">
+            This is the default tile!
+            <button 
+              type="button"
+              class="btn-close"
+              @click="close"
+            >
+            x
+            </button>
+          </slot>
+        </header>
+        <section class="modal-body">
+          <slot name="body">
+            I'm the default body!
+          </slot>
+        </section>
+        <footer class="modal-footer">
+          <slot name="footer">
+            <button
+              type="button"
+              class="btn-green"
+              @click="close"
+            >
+              Close me!
+            </button>
+          </slot>
+        </footer>
+      </div>    
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -45,6 +47,16 @@
 </script>
 
 <style>
+
+  .modal-fade-enter,
+  .modal-fade-leave-to {
+    opacity: 0;
+  }
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+    transition: 0.5s ease;
+  }
+
   .modal-backdrop {
     position: fixed;
     top: 0;
