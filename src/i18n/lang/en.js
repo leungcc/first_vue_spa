@@ -6,7 +6,8 @@ export const message = {
 
 export const header = {
   index: 'Home',
-  planList: 'PlanList'
+  planList: 'PlanList',
+  alarmmgr: 'Alarm Management'
 }
 
 export const language = {

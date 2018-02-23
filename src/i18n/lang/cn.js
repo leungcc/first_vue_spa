@@ -6,7 +6,8 @@ export const message = {
 
 export const header = {
   index: '首页',
-  planList: '计划列表'
+  planList: '计划列表',
+  alarmmgr: '报警管理'
 }
 
 export const language = {

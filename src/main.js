@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+
+import '@/validate'
+
 import 'bootstrap/dist/css/bootstrap.css'
 //import 'element-ui/lib/theme-chalk/index.css'
 import '../theme/index.css'

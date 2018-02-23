@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
 import TimeEntries from '@/components/TimeEntries'
+import AlarmMgr from '@/components/AlarmMgr'
+import VeeValidate from '@/components/VeeValidate'
 
 Vue.use(Router)
 
@@ -26,6 +28,14 @@ export default new Router({
           component: resolve => require(['../components/LogTime.vue'], resolve)
         }
       ]
+    },{
+      path: '/alarmmgr',
+      name: 'alarmmgr',
+      component: AlarmMgr
+    },{
+      path: '/vee-validate',
+      name: 'vee-validate',
+      component: VeeValidate
     },{
       path: '*',
       redirect: '/home'
